@@ -44,7 +44,11 @@
 </div>
 
 {% for queue in cont %}
+<<<<<<< HEAD
   <img src="/media/{{queue.pic}}" data-toggle="modal" data-target="#myModal">
+=======
+  <img src="{{media_url}}{{queue.pic}}" data-toggle="modal" data-target="#myModal">
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -56,7 +60,11 @@
           <h4 class="modal-title">{{ queue.name}}</h4>
         </div>
         <div class="modal-body">
+<<<<<<< HEAD
           <img src="/media/{{queue.pic}}"/>
+=======
+          <img src="{{media_url}}{{queue.pic}}"/>
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d
 	  {{queue.discription}}
         </div>
         <div class="modal-footer">
@@ -74,6 +82,9 @@
 </body>
 </html>
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d

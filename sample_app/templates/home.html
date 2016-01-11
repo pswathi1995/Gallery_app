@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Welcome</title>
+=======
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -11,6 +19,7 @@
 <style>
 div.show {
     position: relative;
+<<<<<<< HEAD
     bottom: -175px;
     left: 400px;
     width:142px;
@@ -35,11 +44,34 @@ div.image{
 	<form action="{%url 'display' %}">{%csrf_token%}	
 	<div class="show">
 		<button type="submit" class="btn btn-lg">Show gallery</button>
+=======
+    bottom: -275px;
+    left: 400px;
+}
+div.upload {
+    position: relative;
+    bottom: -230px;
+    left: 600px;
+}
+body {
+    background-image: url("{% static 'images/12.py' %}");
+}
+</style>
+<body>
+<div class="container">
+	<form action="{%url 'display' %}">{%csrf_token%}	
+	<div class="show">
+		<button type="submit" class="btn btn-danger btn-lg">Show gallery</button>
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d
 	</div>
 	</form>
 	<form action="{%url 'upload' %}">{%csrf_token%}
 	<div class="upload">
+<<<<<<< HEAD
 		<button type="submit" class="btn btn-lg">Upload image</button>
+=======
+		<button type="submit" class="btn btn-danger btn-lg">Upload image</button>
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d
 	</div>
 	</form>
 </div>

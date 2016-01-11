@@ -6,6 +6,7 @@ from time import time
 # Create your models here.
 
 def getImage(instanace, filename):
+<<<<<<< HEAD
     return "documents/%s_%s"%(str(time()),filename)
 
 def getAudio(instanace, filename):
@@ -30,3 +31,14 @@ class profile(models.Model):
     def __str__(self):
         return self.name
 
+=======
+    print filename
+    return "documents/%s_%s"%(str(time()),filename)
+
+class profile(models.Model):
+    name = models.CharField(max_length = 120)
+    pic = models.FileField(upload_to=getImage)
+    discription = models.CharField(max_length=500)
+    def __str__(self):
+	return self.email
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d
