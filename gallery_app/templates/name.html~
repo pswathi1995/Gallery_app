@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<form class="form-inline" role="form" method="post" action=#>{% csrf_token %}
+        <legend>{{ title }}</legend>
+        {% if form.non_field_errors %}
+        <div class="alert alert-danger">{{ form.non_field_errors|join:"<br \>" }}</div>
+        {% endif %}
+        {% for field in form %}
+                <div class="control-group">
+		   <label  class="control-label col-sm-2">{{ field.label }}:&nbsp;*</label> 
+ 		    {% if field.help_text %}
+		    <span class="help-block">{{ field.help_text }}</span>
+ 		   {% endif %}
+                    <span class="controls">{{ field }}</span>
+                </div></br>
+        {% endfor %}
+    <div class="form-actions">
+        <button type="submit"  class="btn btn-primary btn-lg btn-block" >Submit</button>
+    </div>
+</form>
+</body>
+</html>
+  
