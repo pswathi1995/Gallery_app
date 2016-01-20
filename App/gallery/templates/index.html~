@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/media/css/batchmembers.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+#gallery .profilePicture img:hover{
+  opacity:0.4;
+}
+</style>
+</head>
+<body>
+{%include "header.html"%}
+<section id="gallery">
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <h2 class="heading">Gallery</h2>
+    </div>
+  </div>
+  <div class="batchPictures">
+    {% for queue in cont%}
+    <div class="col-md-3 col-sm-4">
+      <div class="profilePicture">
+        {% load thumbnail %}
+        <img data-url="/media/{{queue.pic}}" data-audio="/media/{{queue.audio_track}}" data-video ="/media/{{queue.video_track}}" data-description ="{{queue.discription}}" data-name ="{{queue.name}}" data-email ="{{queue.email}}" src="/media/{{queue.pic}}" data-toggle="modal" data-target="#exampleModal" >
+        {% if queue.video_track != "" %}
+        <i class="material-icons" style="position: absolute;left:210px; top: 193px;z-index: 10;font-size: 50px;" >videocam</i>
+        {% endif %}
+        {% if queue.audio_track != "" %}
+        <i class="material-icons" style="position: absolute;left:160px; top: 193px;z-index: 10;font-size: 50px;">volume_up</i>
+        {% endif %}
+      </img>
+      <div class="profile-caption">
+        <h4>{{queue.name}}</h4>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content" style="min-height:500px">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" align="left">
+              <form>
+                <div class="form-group">
+                  <div class="col-sm-6">
+                    <img class="img img-test" data-url="/media/{{queue.pic}}" src="/media/{{queue.pic}}"></img>
+                  </div>
+                 <div class="modal-body-name">
+                    <h3><p>{{queue.name}}</p></h3>
+                  </div>
+                  <div class="modal-body-email">
+                    <h3><p>{{queue.email}}</p></h3>
+                  </div>
+				  <div class="modal-body-description">
+	                <h4><p>{{queue.description}}</p></h4>
+				  </div>
+                </div>
+                <div id='media_div'>
+                	<audio id='audio_track' src = "" controls></audio><br>
+	               	<video id='video_track' src = "" width="420" height="240" controls></video><br>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var recipient = button.data('url') // Extract info from data-* attributes
+      var audio = button.data('audio')
+      var video = button.data('video')
+      var description = button.data('description')
+      var name = button.data('name')
+      var email = button.data('email')
+      var modal = $(this)
+      modal.find('.modal-body img').attr({'src':recipient})
+      modal.find('.modal-body audio').attr({'src':audio})
+	  var parent_audio = document.getElementById("media_div");
+      var child_audio = document.getElementById("audio_track");
+	  var att_audio = document.getElementById("audio_track").getAttribute("src");
+	  if(att_audio == '/media/'){
+			$('#audio_track').hide();
+	  }
+      else{
+		$('#audio_track').show();	
+	  }
+      modal.find('.modal-body video').attr({'src':video})
+      var parent_video = document.getElementById("media_div");
+      var child_video = document.getElementById("video_track");
+	  var att_video = document.getElementById("video_track").getAttribute("src");
+	  if(att_video == '/media/'){
+			$('#video_track').hide();
+	  }
+      else{
+		$('#video_track').show();	
+	  }
+	  modal.find('.modal-body p').text(description)
+      modal.find('.modal-body-name p').text(name)
+      modal.find('.modal-body-email p').text(email)
+       
+    })
+  </script>
+  </div>
+  {% endfor%}
+</div>
+<section>
+</body>
+</html>
+
