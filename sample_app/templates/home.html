@@ -1,0 +1,80 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome</title>
+=======
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<style>
+div.show {
+    position: relative;
+<<<<<<< HEAD
+    bottom: -175px;
+    left: 400px;
+    width:142px;
+    border:2px solid blue;
+}
+div.upload {
+    position: relative;
+    bottom: -124px;
+    left: 600px;
+    width:150px;
+    border:2px solid blue;
+}
+div.image{
+	position: relative;
+}
+</style>
+<body>
+<div class="image">
+<img src="/media/documents/ts_logo.png" width="300px" heigth="300px" class="img-responsive"></img>
+</div>
+<div class="container">
+	<form action="{%url 'display' %}">{%csrf_token%}	
+	<div class="show">
+		<button type="submit" class="btn btn-lg">Show gallery</button>
+=======
+    bottom: -275px;
+    left: 400px;
+}
+div.upload {
+    position: relative;
+    bottom: -230px;
+    left: 600px;
+}
+body {
+    background-image: url("{% static 'images/12.py' %}");
+}
+</style>
+<body>
+<div class="container">
+	<form action="{%url 'display' %}">{%csrf_token%}	
+	<div class="show">
+		<button type="submit" class="btn btn-danger btn-lg">Show gallery</button>
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d
+	</div>
+	</form>
+	<form action="{%url 'upload' %}">{%csrf_token%}
+	<div class="upload">
+<<<<<<< HEAD
+		<button type="submit" class="btn btn-lg">Upload image</button>
+=======
+		<button type="submit" class="btn btn-danger btn-lg">Upload image</button>
+>>>>>>> 947423a8b0f015e22ede1581df59f0277f8e894d
+	</div>
+	</form>
+</div>
+
+</body>
+</html>

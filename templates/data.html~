@@ -1,0 +1,3 @@
+{% for queue in cont %}   
+	<li>{{ queue.email }}</li>
+{% endfor %}
