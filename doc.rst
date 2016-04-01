@@ -27,8 +27,8 @@ Software Requirements
 	* postgresql
 	* python 2.7
 	* Django 1.9
-	
-mysql-client
+
+PostgreSQL	
 ------------
 	* Django allows varied languages for accessing databases. We have choosen postgresql for managing database.
 	* Database is named as galleryapp. There are 21 tables in the database.
@@ -37,7 +37,7 @@ mysql-client
 Modules
 =======
 	* Data collector
-	* Resume generator
+
 --------------
 Data collector
 --------------
@@ -83,4 +83,6 @@ Implementation
 
 	Admin:
 		* Admin will be able to login and all the pictures irrespective of the batches will be visible on the screen, and on click on the picture, that particular student's profile is visible.
-		* The  
+		* A dropdown named Pending approvals with new registrations and updated is provided.
+		* On click the admin can either approve or reject the request by the students, and if it is to be rejected, comment for rejection is to be given.
+		* Admin can create batches.
