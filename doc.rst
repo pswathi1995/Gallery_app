@@ -6,7 +6,7 @@ Application Overview
 ====================
 	Gallery is an application used to store the details of all the students and present the selected students profiles to the recruter.
 
-	Implementation details
+	Overview:
 		* The student will be able to register into the application.
 		* The admin will approve or reject the student profile.
 		* After approval, the student will be able to view his batchmates profiles.
@@ -65,10 +65,22 @@ Views
 	* It will request information from the model you created before and pass it to a template.
 	* They are python functions.
 
-Overview
---------
-	* Details are taken from the end user.
-	* Data is validated and saved in Database.
-	* If it is an existing user the stored data is retrieved and displayed.
-	* Displays the various templates available for user to select one of their choice.
-	* Dictionary is produced using the ResumeBuilder.conf file and is sent to generatePdf.py by starting the worker.
+Implementation
+--------------
+	Student:
+		* Student will be able to login and for the first time, he will be able to see the registration page.
+		* Student will fill the registration form with all the details and uploads the required files.
+		* Data is validated and a request is sent to the admin for approval.
+		* The student will not be able to view batch gallery until his profile has been approved.
+		* If his profile is rejected by the admin, a message will be displayed on the screen showing why it has been rejected.
+		* If it is an existing user the stored data is retrieved and displayed where the student will be able to see his batchmates details.
+		* Displays the pictures of all the batchmates which on click on the picture will display their profile.
+		* The profile contains all the information provided by the student and a button to view resume.
+		* On click of that button a PDF file containing the resume will be displayed which has a option to save.
+		* The student has an option to update his profile.
+		* When the student clicks on update, the previous data will be shown on the screen with can be edited.
+		* On click of submit button a request will be sent to the admin for approval and the changes are reflected only when the admin  approves them
+
+	Admin:
+		* Admin will be able to login and all the pictures irrespective of the batches will be visible on the screen, and on click on the picture, that particular student's profile is visible.
+		* The  
