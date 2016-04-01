@@ -80,5 +80,5 @@ Implementation
 		* Pending approvals consisting of new registrations and updates is provided as a dropdown along with the count.
 		* On clicking the new registrations the list of new registrations is displayed.
 		* Admin can view their profiles and can either approve or reject the request by the students.
-		* Same thing can be done for updates also.
-		* Admin can create batches.
+		* Similarly on clicking updates, the list of updates are diaplayed. Admin can view their profiles and can either approve or reject.
+		* Admin can create batches and assign the student to the batch at the time of approval.dmin can create batches.
