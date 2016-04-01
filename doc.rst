@@ -4,22 +4,17 @@
 
 Application Overview
 ====================
-	Gallery is an application used to store the details of all the students and present the selected students profiles to the recruter.
+	Gallery is an application used to store the details of all the students and present the selected students profiles to the recruiter.
 
 	Overview:
-		* The student will be able to register into the application.
-		* The admin will approve or reject the student profile.
-		* After approval, the student will be able to view his batchmates profiles.
-		* Admin can generate a view for the recruter to view the profiles of the selected students.
+		* The student register into the application.
+		* The admin will either approve or reject the student profile.
+		* After approval, the student will have access to view his batchmates profiles.
+		* Admin can generate a view page for the recruter to view the profiles of the selected students.
 
 
 Technical Requirements
 ======================
-
---------------------
-Hardware Requirement
---------------------
-	Based on number of hits, system must be configured.
 
 ---------------------
 Software Requirements
@@ -31,7 +26,7 @@ Software Requirements
 PostgreSQL	
 ------------
 	* Django allows varied languages for accessing databases. We have choosen postgresql for managing database.
-	* Database is named as galleryapp. There are 21 tables in the database.
+	* Database is named as galleryapp. There are 8 tables in the database.
 
 
 Modules
@@ -72,17 +67,17 @@ Implementation
 		* Student will fill the registration form with all the details and uploads the required files.
 		* Data is validated and a request is sent to the admin for approval.
 		* The student will not be able to view batch gallery until his profile has been approved.
-		* If his profile is rejected by the admin, a message will be displayed on the screen showing why it has been rejected.
+		* If his profile is rejected by the admin, a message will be displayed on the screen showing why it has been rejected, else he will be navigated to the batch gallery page.
 		* If it is an existing user the stored data is retrieved and displayed where the student will be able to see his batchmates details.
-		* Displays the pictures of all the batchmates which on click on the picture will display their profile.
-		* The profile contains all the information provided by the student and a button to view resume.
-		* On click of that button a PDF file containing the resume will be displayed which has a option to save.
+		* The batch gallery page displays the profiles of all the batchmates in the form of a portfolio.
+		* On clicking the portfolio, a modal is displayed which consists of all the details and an option to view resume also.
 		* The student has an option to update his profile.
-		* When the student clicks on update, the previous data will be shown on the screen with can be edited.
+		* When the student clicks on update, the previous data will be shown on the screen with can be updated.
 		* On click of submit button a request will be sent to the admin for approval and the changes are reflected only when the admin  approves them
 
 	Admin:
-		* Admin will be able to login and all the pictures irrespective of the batches will be visible on the screen, and on click on the picture, that particular student's profile is visible.
-		* A dropdown named Pending approvals with new registrations and updated is provided.
-		* On click the admin can either approve or reject the request by the students, and if it is to be rejected, comment for rejection is to be given.
+		* Admin will login and all the pictures irrespective of the batches will be displayed on the screen, and on clicking the portfolio, that particular student's profile is displayed.
+		* Pending approvals consisting of new registrations, the list of new registrations is displayed.
+		* Admin can view their profiles and can either approve or reject the request by the students.
+		* Same thing can be done for updates also.
 		* Admin can create batches.
