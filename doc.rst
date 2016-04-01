@@ -78,7 +78,6 @@ Implementation
 	Admin:
 		* Admin will login and all the pictures irrespective of the batches will be displayed on the screen, and on clicking the portfolio, that particular student's profile is displayed.
 		* Pending approvals consisting of new registrations and updates is provided as a dropdown along with the count.
-		* On clicking the new registrations the list of new registrations is displayed.
-		* Admin can view their profiles and can either approve or reject the request by the students.
-		* Same thing can be done for updates also.
-		* Admin can create batches.
+		* On clicking the new registrations the list of new registrations is displayed. Admin can view their profiles and can either approve or reject the request by the students.
+		* Similarly on clicking updates, the list of updates are diaplayed. Admin can view their profiles and can either approve or reject.
+		* Admin can create batches and assign the student to the batch at the time of approval.
