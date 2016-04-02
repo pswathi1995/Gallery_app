@@ -27,6 +27,7 @@ Modules
 =======
 	* Data collector
 	
+---------------
 DATABASE SCHEMA
 ---------------
 
