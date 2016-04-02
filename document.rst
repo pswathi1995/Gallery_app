@@ -28,7 +28,6 @@ Modules
 	* Data collector
 Database Schema
 ---------------
-	* students
 		+------------+--------------------------+
 		|  Column    |           Type           |
 		+============+==========================+
