@@ -26,5 +26,4 @@ PostgreSQL
 Modules
 =======
 	* Data collector
-Database Schema
----------------
+
