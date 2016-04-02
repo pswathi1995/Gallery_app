@@ -28,7 +28,7 @@ Modules
 	* Data collector
 	
 DATABASE SCHEMA
-===============
+---------------
 
 			+------------+--------------------------+
 			|  Column    |           Type           |
